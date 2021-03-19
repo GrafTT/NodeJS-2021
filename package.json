@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "babel index.js -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "task1": "babel app/task1.js -d dist && nodemon dist/task1.js",
-    "task2": "nodemon app/task2.js"
+    "task1": "nodemon --exec babel-node app/task1.js",
+    "task2": "nodemon --exec babel-node app/task2.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,11 @@
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
+    "@babel/preset-typescript": "^7.13.0",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
