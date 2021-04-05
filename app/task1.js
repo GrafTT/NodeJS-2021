@@ -1,5 +1,7 @@
-let stdin = process.openStdin();
-
-stdin.addListener("data", function (d) {
-    process.stdout.write(`${d.reverse()}\n`);
+process.stdin.addListener("data", chunk => {
+    process.stdout.write(String(chunk)
+                            .trim()
+                            .split('')
+                            .reverse()
+                            .join(''));
 });
